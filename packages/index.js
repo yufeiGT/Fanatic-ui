@@ -24,6 +24,8 @@ import menuItem from './menu/src/menu-item';
 export const MenuItem = menuItem;
 import submenu from './menu/src/submenu';
 export const Submenu = submenu;
+import slider from './slider';
+export const Slider = slider;
 import _switch from './switch';
 export const Switch = _switch;
 
@@ -41,5 +43,6 @@ export default [
 	menu,
 	menuItem,
 	submenu,
+	Slider,
 	Switch,
 ];

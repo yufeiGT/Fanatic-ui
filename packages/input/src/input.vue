@@ -90,12 +90,24 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@mixin base($height, $fontSize, $paddingRight, $marginRight: 5px){
+	font-size: $fontSize;
+	.fan-input-inner{
+		padding-right: $paddingRight;
+		height: $height;
+	}
+	.fan-input-suffix{
+		i{
+			line-height: $height;
+			margin-right: $marginRight;
+		}
+	}
+}
+
 .fan-input{
-	$height: 40px;
 	overflow: hidden;
 	position: relative;
 	display: inline-block;
-	font-size: 14px;
 	color: #333;
 	transition: all .3s;
 	.fan-input-inner{
@@ -104,19 +116,11 @@ export default {
 		font-size: inherit;
 		border: none;
 		box-sizing: border-box;
-		padding: 0 30px 0 10px;
-		height: $height;
 		border: 1px solid #dcdfe6;
 		border-radius: 3px;
+		padding-left: 10px;
 		&:focus{
 			border-color: #999;
-		}
-	}
-	&.fan-input-disabled{
-		opacity: .6;
-		.fan-input-inner{
-			cursor: no-drop;
-			background-color: #e6e6e6;
 		}
 	}
 	.fan-input-suffix{
@@ -129,10 +133,8 @@ export default {
 		font-size: inherit;
 		user-select: none;
 		i{
-			margin-right: 5px;
 			vertical-align: top;
 			height: 100%;
-			line-height: $height;
 			cursor: pointer;
 			opacity: .5;
 			transition: all .3s;
@@ -141,59 +143,25 @@ export default {
 			}
 		}
 	}
-	&.fan-input-extra-large{
-		$height: 60px;
-		font-size: 18px;
+	&.fan-input-disabled{
+		opacity: .6;
 		.fan-input-inner{
-			height: $height;
-			padding-right: 50px;
+			cursor: no-drop;
+			background-color: #e6e6e6;
 		}
-		.fan-input-suffix{
-			i{
-				margin-right: 10px;
-				line-height: $height;
-			}
-		}
+	}
+	@include base(40px, 14px, 30px);
+	&.fan-input-extra-large{
+		@include base(60px, 18px, 50px, 10px);
 	}
 	&.fan-input-large{
-		$height: 50px;
-		font-size: 16px;
-		.fan-input-inner{
-			height: $height;
-			padding-right: 40px;
-		}
-		.fan-input-suffix{
-			i{
-				margin-right: 10px;
-				line-height: $height;
-			}
-		}
+		@include base(50px, 16px, 40px, 10px);
 	}
 	&.fan-input-small{
-		$height: 30px;
-		font-size: 12px;
-		.fan-input-inner{
-			height: $height;
-			padding-right: 20px;
-		}
-		.fan-input-suffix{
-			i{
-				line-height: $height;
-			}
-		}
+		@include base(30px, 12px, 20px);
 	}
 	&.fan-input-extra-small{
-		$height: 22px;
-		font-size: 12px;
-		.fan-input-inner{
-			height: $height;
-			padding-right: 20px;
-		}
-		.fan-input-suffix{
-			i{
-				line-height: $height;
-			}
-		}
+		@include base(22px, 12px, 20px);
 	}
 }
 </style>

@@ -114,9 +114,31 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@mixin base($size, $fontSize, $borderWidth){
+	font-size: $fontSize;
+	.fan-switch-core{
+		height: $size;
+		border-width: $borderWidth;
+		border-radius: $size;
+		&::after{
+			width: $size;
+			height: $size;
+		}
+	}
+	i,
+	span{
+		line-height: $size + $borderWidth * 2;
+	}
+	&.fan-switch-checked{
+		.fan-switch-core{
+			&::after{
+				margin-left: -$size;
+			}
+		}
+	}
+}
+
 .fan-switch{
-	$size: 20px;
-	font-size: 14px;
 	overflow: hidden;
 	position: relative;
 	display: inline-block;
@@ -133,18 +155,14 @@ export default {
 		overflow: hidden;
 		position: relative;
 		display: inline-block;
-		height: $size;
-		border: solid 3px;
-		border-radius: $size;
 		transition: all .3s;
+		border-style: solid;
 		&::after{
 			overflow: hidden;
 			content: '';
 			position: absolute;
 			left: 0;
 			top: 0;
-			width: $size;
-			height: $size;
 			border-radius: 100%;
 			background-color: #FFF;
 			transition: all .3s;
@@ -153,7 +171,6 @@ export default {
 	i,
 	span{
 		font-size: inherit;
-		line-height: $size + 6;
 		display: inline-block;
 	}
 	&.fan-button-disabled{
@@ -164,109 +181,21 @@ export default {
 		.fan-switch-core{
 			&::after{
 				left: 100%;
-				margin-left: -$size;
 			}
 		}
 	}
+	@include base(20px, 14px, 3px);
 	&.fan-switch-extra-large{
-		$size: 30px;
-		font-size: 18px;
-		.fan-switch-core{
-			height: $size;
-			border-width: 5px;
-			&::after{
-				width: $size;
-				height: $size;
-			}
-		}
-		&.fan-switch-checked{
-			.fan-switch-core{
-				&::after{
-					margin-left: -$size;
-				}
-			}
-		}
-		i,
-		span{
-			font-size: inherit;
-			line-height: $size + 10;
-			display: inline-block;
-		}
+		@include base(30px, 18px, 5px);
 	}
 	&.fan-switch-large{
-		$size: 24px;
-		font-size: 16px;
-		.fan-switch-core{
-			height: $size;
-			border-width: 4px;
-			&::after{
-				width: $size;
-				height: $size;
-			}
-		}
-		&.fan-switch-checked{
-			.fan-switch-core{
-				&::after{
-					margin-left: -$size;
-				}
-			}
-		}
-		i,
-		span{
-			font-size: inherit;
-			line-height: $size + 8;
-			display: inline-block;
-		}
+		@include base(24px, 16px, 4px);
 	}
 	&.fan-switch-small{
-		$size: 18px;
-		font-size: 15px;
-		.fan-switch-core{
-			height: $size;
-			border-width: 2px;
-			&::after{
-				width: $size;
-				height: $size;
-			}
-		}
-		&.fan-switch-checked{
-			.fan-switch-core{
-				&::after{
-					margin-left: -$size;
-				}
-			}
-		}
-		i,
-		span{
-			font-size: inherit;
-			line-height: $size + 4;
-			display: inline-block;
-		}
+		@include base(18px, 15px, 2px);
 	}
 	&.fan-switch-extra-small{
-		$size: 14px;
-		font-size: 12px;
-		.fan-switch-core{
-			height: $size;
-			border-width: 1px;
-			&::after{
-				width: $size;
-				height: $size;
-			}
-		}
-		&.fan-switch-checked{
-			.fan-switch-core{
-				&::after{
-					margin-left: -$size;
-				}
-			}
-		}
-		i,
-		span{
-			font-size: inherit;
-			line-height: $size + 2;
-			display: inline-block;
-		}
+		@include base(14px, 12px, 1px);
 	}
 }
 </style>

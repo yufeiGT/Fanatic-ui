@@ -112,85 +112,52 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.fan-button{
-	$height: 40px;
-	overflow: hidden;
-	display: inline-block;
+@mixin base($height, $fontSize, $padding, $lineHeight){
 	height: $height;
-	padding: 4px 15px;
-	border: solid 1px transparent;
-	border-radius: 3px;
-	cursor: pointer;
-	font-size: 14px;
-	user-select: none;
-	transition: all .3s;
+	padding: $padding;
+	font-size: $fontSize;
 	&.fan-button-round{
 		border-radius: $height;
 	}
-	&.fan-button-circle{
-		border-radius: 50% !important;
+	&>span{
+		line-height: $lineHeight;
 	}
+}
+
+.fan-button{
+	overflow: hidden;
+	display: inline-block;
+	border: solid 1px transparent;
+	border-radius: 3px;
+	cursor: pointer;
+	user-select: none;
+	transition: all .3s;
 	&.fan-button-disabled{
 		cursor: no-drop;
 		opacity: .6;
 	}
+	&.fan-button-circle{
+		border-radius: 50% !important;
+	}
 	&.fan-button-text{
 		background-color: transparent !important;
 	}
+	&>i,
+	&>span{
+		font-size: inherit;
+	}
+	@include base(40px, 14px, 4px 15px, 30px);
 	&.fan-button-extra-large{
-		$height: 60px;
-		height: $height;
-		padding: 6px 40px;
-		font-size: 18px;
-		&.fan-button-round{
-			border-radius: $height;
-		}
-		&>span{
-			line-height: 36px;
-		}
+		@include base(60px, 18px, 6px 40px, 36px);
 	}
 	&.fan-button-large{
-		$height: 50px;
-		height: $height;
-		padding: 6px 30px;
-		font-size: 16px;
-		&.fan-button-round{
-			border-radius: $height;
-		}
-		&>span{
-			line-height: 36px;
-		}
+		@include base(50px, 16px, 6px 30px, 36px);
 	}
 	&.fan-button-small{
-		$height: 30px;
-		height: $height;
-		padding: 4px 10px;
-		font-size: 12px;
-		&.fan-button-round{
-			border-radius: $height;
-		}
-		&>span{
-			line-height: 20px;
-		}
+		@include base(30px, 12px, 4px 10px, 20px);
 	}
 	&.fan-button-extra-small{
-		$height: 22px;
-		height: $height;
-		padding: 1px 8px;
-		font-size: 12px;
-		&.fan-button-round{
-			border-radius: $height;
-		}
-		&>span{
-			line-height: 18px;
-		}
-	}
-	&>i{
-		font-size: inherit;
-	}
-	&>span{
-		line-height: 30px;
-		font-size: inherit;
+		@include base(22px, 12px, 1px 8px, 18px);
 	}
 }
 </style>

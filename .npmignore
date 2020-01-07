@@ -1,0 +1,17 @@
+.*
+*.md
+*.yml
+build/
+node_modules/
+packages/
+src/
+lib/
+test/
+webpack.config.js
+.gitignore
+.npmignore
+index.html
+.editorconfig
+.babelrc
+.package-lock.json
+dist/*.map

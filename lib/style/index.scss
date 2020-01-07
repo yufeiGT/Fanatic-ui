@@ -1,0 +1,85 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+	outline: none;
+	vertical-align: top;
+	-webkit-overflow-scrolling: touch;
+	overflow-scrolling: touch;
+	font-family: system, -apple-system, BlinkMacSystemFont, "PingFang SC", "Segoe UI", "Microsoft YaHei", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/*html{ overflow: auto; }*/
+html, body{
+	width: 100%;
+	height: 100%;
+}
+
+body{
+	overflow: auto;
+}
+
+/**{ -webkit- transform: translateZ(0); -moz-transform: translateZ(0); -ms-transform: translateZ(0); -o-transform: translateZ(0); transform: translateZ(0); }*/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td{
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-size: 100%;
+}
+
+address, cite, dfn, em, var{
+	font-style: normal;
+}
+
+code, kbd, pre, samp{
+	font-family: courier new, courier, monospace;
+}
+
+ul, ol{
+	list-style: none;
+}
+
+legend{
+	color: #000;
+}
+
+fieldset, img{
+	border: 0;
+}
+
+button, input, select, textarea{
+	font-size: 100%;
+}
+
+ul, li{
+	list-style-type: none;
+}
+
+a, span{
+	display: inline-block;
+}
+
+a{
+	text-decoration: none;
+	cursor: pointer;
+}
+
+::-ms-clear{
+	display: none;
+}
+
+::-ms-reveal{
+	display: none;
+}
+
+::-o-clear{
+	display: none;
+}
+
+[fan-no-select]{
+	user-select: none;
+}
+

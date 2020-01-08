@@ -11,7 +11,7 @@
 		</div>
 		<adapt-extra-small tag="div" class="fan-menu-open">
 			<slot v-if="$slots.right" name="right" :show="10" />
-			<fan-button v-else @tap="show" :back-color="backgroundColor" :text-color="textColor" :active-text-color="activeTextColor" icon="fan-icon-menu"></fan-button>
+			<fan-button v-else @tap="show" size="medium" :back-color="backgroundColor" :text-color="textColor" :active-text-color="activeTextColor" icon="fan-icon-menu"></fan-button>
 		</adapt-extra-small>
 		<adapt-extra-small tag="div" class="fan-menu-title" :style="{
 			color: textColor,
@@ -125,7 +125,7 @@ export default {
 	}
 }
 
-@media screen and (max-width: 567px){
+@include extra-small{
 	$height: 40px;
 	.fan-menu{
 		width: 100%;

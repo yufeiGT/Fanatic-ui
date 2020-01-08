@@ -70,17 +70,14 @@ export default {
 	&>i{
 		margin-right: 5px;
 	}
-}
-
-.fan-menu-item-hover{
-	max-height: 500px;
-}
-
-@media screen and (max-width: 567px){
-	.fan-menu-item{
+	@include extra-small{
 		float: none;
 		display: block;
 		padding: 0 20px;
 	}
+}
+
+.fan-menu-item-hover{
+	max-height: 500px;
 }
 </style>

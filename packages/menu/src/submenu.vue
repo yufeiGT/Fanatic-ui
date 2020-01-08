@@ -175,7 +175,7 @@ export default {
 	}
 }
 
-@media screen and (max-width: 567px){
+@include extra-small{
 	.fan-menu-item{
 		padding: 0;
 	}

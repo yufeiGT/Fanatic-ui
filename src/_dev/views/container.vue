@@ -22,18 +22,19 @@
 		<fan-switch @change="change" v-model="switchValue" inactive-text="男" active-text="女" disabled />
 		<p>{{sliderValue}}</p>
 		<h1>---</h1>
-		<fan-slider v-model="sliderValue" size="extra-large" :step="10" show-stops @change="change" @input="input" disabled />
+		<fan-slider v-model="sliderValue" size="extra-large" :step="10" show-stops @change="change" @input="input" disabled :marks="marks" />
 		<fan-slider v-model="sliderValue" size="large" :step="8" show-stops />
-		<fan-slider v-model="sliderValue" size="midume" active-color="blue" inactive-color="#999" color="yellow" :max="500" />
-		<fan-slider v-model="sliderValue" size="small" :step="5" show-stops />
-		<fan-slider v-model="sliderValue" size="extra-small" :step="4" show-stops/>
-		<fan-slider v-model="sliderValue" size="extra-large" height="300px" :step="10" show-stops/>
+		<fan-slider v-model="sliderValue" size="midume" active-color="blue" inactive-color="#999" color="yellow" :marks="marks" />
+		<fan-slider v-model="sliderValue" size="small" :step="5" show-stops :marks="marks" />
+		<fan-slider v-model="sliderValue" size="extra-small" :step="4" show-stops :marks="marks" />
+		<fan-slider v-model="sliderValue" size="extra-large" height="300px" :step="10" show-stops :marks="marks" />
 		<fan-slider v-model="sliderValue" size="large" height="300px" />
 		<fan-slider v-model="sliderValue" size="midume" height="300px" />
 		<fan-slider v-model="sliderValue" size="small" height="300px" />
 		<fan-slider v-model="sliderValue" size="extra-small" height="300px" />
 		<h1>---</h1>
-		<el-slider v-model="sliderValue" :marks="marks" show-input></el-slider>
+		<el-slider v-model="sliderValue" :step="8" :marks="marks" show-input></el-slider>
+		<el-slider v-model="sliderValue" :marks="marks" show-input vertical height="300px"></el-slider>
 	</div>
 </template>
 <script>

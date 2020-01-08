@@ -106,6 +106,58 @@ export default {
 		let _vm = this,
 			style = {};
 		if (_vm.vertical) style.height = _vm.height;
+		const {
+			marks = _vm._v(''),
+				markPoints = [_vm._v('')],
+		} = _vm.marks ? (() => {
+			let marks = [],
+				markPoints = [];
+			for (let i in _vm.marks) {
+				if (i > _vm.max) continue;
+				let positon = i / _vm.max * 100;
+				marks.push(_c(
+					'i', {
+						style: {
+							[_vm.vertical ? 'bottom' : 'left']: `${positon}%`,
+							color: _vm[i >= _vm.value ? 'inactiveColor' : 'activeColor'],
+						},
+					}, [_vm._v(_vm.marks[i])],
+				));
+				markPoints.push(_c(
+					'i', {
+						staticClass: 'fan-slider-toTop',
+						style: {
+							[_vm.vertical ? 'bottom' : 'left']: `${positon}%`,
+							backgroundColor: _vm.color,
+						},
+					},
+				));
+			};
+			return {
+				marks: _c(
+					'div', {
+						staticClass: 'fan-slider-marks',
+					},
+					marks,
+				),
+				markPoints,
+			};
+		})() : (() => {
+			let markPoints = [];
+			if (_vm.showStops) {
+				let max = ~~(_vm.max / _vm.step) + 1;
+				for (let i = 0; i < max; i++) markPoints.push(_c(
+					'i', {
+						style: {
+							[_vm.vertical ? 'bottom' : 'left']: `${_vm.getPercent(_vm.step * i)}%`,
+							backgroundColor: _vm.color,
+						},
+					}));
+			}
+			return {
+				markPoints,
+			};
+		})();
 		return _c(
 			'div', {
 				staticClass: 'fan-slider',
@@ -134,18 +186,7 @@ export default {
 									},
 								},
 							}, [
-								...(_vm.showStops ? (() => {
-									let stops = [],
-										max = ~~(_vm.max / _vm.step) + 1;
-									for (let i = 0; i < max; i++) stops.push(_c(
-										'i', {
-											style: {
-												[_vm.vertical ? 'bottom' : 'left']: `${_vm.getPercent(_vm.step * i)}%`,
-												backgroundColor: _vm.color,
-											},
-										}));
-									return stops;
-								})() : [_vm._v('')]),
+								...markPoints,
 								_c(
 									'span', {
 										style: {
@@ -177,6 +218,7 @@ export default {
 						),
 					],
 				),
+				marks,
 			],
 		);
 	},
@@ -187,15 +229,25 @@ export default {
 	display: inline-block;
 	.fan-slider-core{
 		height: 100%;
-	}
-	.fan-slider-line{
-		height: 100%;
-		span{
-			width: 100%;
+		float: left;
+		.fan-slider-line{
+			height: 100%;
+			span{
+				width: 100%;
+			}
+		}
+		.fan-slider-round{
+			margin-left: 0;
 		}
 	}
-	.fan-slider-round{
-		margin-left: 0;
+	.fan-slider-marks{
+		height: 100%;
+		float: left;
+		width: 20px;
+		i{
+			transform: translateY(50%);
+			left: 0;
+		}
 	}
 }
 
@@ -271,6 +323,20 @@ export default {
 			margin: auto;
 			cursor: grab;
 			border-radius: 100%;
+			z-index: 2;
+		}
+	}
+	.fan-slider-marks{
+		overflow: visible;
+		position: relative;
+		text-align: center;
+		height: 20px;
+		i{
+			position: absolute;
+			height: 20px;
+			line-height: 20px;
+			font-style: inherit;
+			transform: translateX(-50%);
 		}
 	}
 	&.fan-slider-disabled{

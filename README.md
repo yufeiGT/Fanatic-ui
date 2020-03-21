@@ -1,17 +1,16 @@
-# fanatic-ui
+# Fanatic-ui
 
 > 基于Vue的响应式UI库
 
-## Build Setup
+## 安装
 
-``` bash
-# install dependencies
-npm install
+``` 
+imprort Vue from 'vue';
+import FanaticUI from 'fanatic-ui';
 
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
+Vue.use(FanaticUI);
 ```
 
+[官网地址](https://crazy-gt.com/fanatic-ui)
+
+[组件](/packages)

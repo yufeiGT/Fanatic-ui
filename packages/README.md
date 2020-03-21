@@ -1,5 +1,12 @@
-## 组件列表
+### 组件列表
+* [adapt](#adapt)
+* [breadcrumb](#breadcrumb)
+* [button](#button)
+* [image](#image)
+* [input](#input)
 
+----
+<div id="adapt"></div>
 ### adapt (响应式组件)
 > 通过adapt组件创建在页面不同尺寸下插槽内容的显示与隐藏
 
@@ -38,6 +45,7 @@
 |reverse|颠倒渲染结果|Boolean|——|false|
 ----
 
+<div id="breadcrumb"></div>
 ### breadcrumb (面包屑)
 #### 示例
 > 基础用法
@@ -60,6 +68,7 @@
 |replace|在使用 to 进行路由跳转时，启用 replace 将不会向 history 添加新记录|Boolean|——|false|
 ----
 
+<div id="button"></div>
 ### button (按钮)
 #### 示例
 > 自适应大小
@@ -91,6 +100,7 @@
 |active-text-color|点击时文字颜色|String|——|——|
 ----
 
+<div id="image"></div>
 ### image (图片)
 #### 示例
 > 基础用法
@@ -120,6 +130,7 @@
 |error|加载失败的内容|
 ----
 
+<div id="input"></div>
 ### input (输入框)
 #### 示例
 > 基础用法

@@ -1,9 +1,20 @@
+### 布局容器
+* [header](#header)
+* [main](#main)
+* [aside](#aside)
+* [conainer](#conainer)
+* [footer](#footer)
+----
+
 ### 组件列表
 * [adapt](#adapt)
 * [breadcrumb](#breadcrumb)
 * [button](#button)
 * [image](#image)
 * [input](#input)
+* [menu](#menu)
+* [slider](#slider)
+* [switch](#switch)
 ----
 
 <div id="adapt"></div>
@@ -22,12 +33,12 @@
 
 #### 示例
 > 在页面尺寸是extra-small时显示
-> ```HTML
+> ```html
 > <fan-adapt type="extra-small">我是最小的</fan-adapt>
 > <adapt-extra-small>我是最小的</adapt-extra-small>
 > ```
 > 在页面尺寸不是extra-small是显示
-> ```HTML
+> ```html
 > <fan-adapt type="extra-small" reverse>我不在最小时显示</fan-adapt>
 > <adapt-extra-small>
 > 	<adapt-reverse>我不在最小时显示</adapt-reverse>
@@ -51,7 +62,7 @@
 ### breadcrumb (面包屑)
 #### 示例
 > 基础用法
-> ```HTML
+> ```html
 > <fan-breadcrumb separator=">">
 > 	<fan-breadcrumb-item to="/">首页</fan-breadcrumb-item>
 > 	<fan-breadcrumb-item><a href="http://www.baidu.com">子页</a></fan-breadcrumb-item>
@@ -75,11 +86,11 @@
 ### button (按钮)
 #### 示例
 > 自适应大小
-> ```HTML
+> ```html
 > <fan-button>自适应按钮</fan-button>
 > ```
 > 固定大小
-> ```HTML
+> ```html
 > <fan-button size="extra-small">迷你按钮</fan-button>
 > ```
 
@@ -106,9 +117,10 @@
 <div id="image"></div>
 
 ### image (图片)
+
 #### 示例
 > 基础用法
-> ```HTML
+> ```html
 > <fan-image src="https://crazy-gt.com/crazy-js/images/logo.png" />
 > ```
 
@@ -137,24 +149,25 @@
 <div id="input"></div>
 
 ### input (输入框)
+
 #### 示例
 > 基础用法
-> ```HTML
+> ```html
 > <fan-input v-model="text" />
 > ```
 > 使用show-password属性即可得到一个可切换显示隐藏的密码框
-> ```HTML
+> ```html
 > <fan-input v-model="text" show-password />
 > ```
 
 #### Attributes
 |参数|说明|类型|可选值|默认值|
 |:-|:-|:-|:-|:-|
-|value/v-model|绑定值|String/Number|——|——|
+|value / v-model|绑定值|String/Number|——|——|
 |size|尺寸|String|extra-small / small / medium / large / extra-large|——|
 |min-size|最小尺寸|String|extra-small / small / medium / large / extra-large|——|
 |max-size|最大尺寸|String|extra-small / small / medium / large / extra-large|——|
-|type|类型|String|text，textarea和其他[原生input的type值](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types)|text|
+|type|类型|String|text，textarea和其他[原生input的type值](https://developer.mozilla.org/en-US/docs/Web/html/Element/input#Form_%3Cinput%3E_types)|text|
 |disabled|禁用|Boolean|——|false|
 |clearable|是否可清空|Boolean|——|false|
 |placeholder|输入框占位文本|String|——|——|
@@ -168,4 +181,116 @@
 |change|仅在输入框失去焦点或用户按下回车时触发|(value: String/Number)|
 |input|在input值改变时触发|(value: String/Number)|
 |clear|在点击由 clearable 属性生成的清空按钮时触发|——|
+----
+
+<div id="menu"></div>
+
+### menu (导航菜单)
+#### 示例
+> ```html
+> <fan-menu>
+> 	<template slot="logo">
+> 		<img src="https://crazy-gt.com/crazy-js/images/logo.png">
+> 	</template>
+> 	<template slot="title">菜单标题</template>
+> 	<fan-menu-item icon="fan-icon-behance-outline">
+> 		<router-link to="/">首页</router-link>
+> 	</fan-menu-item>
+> 	<fan-submenu index="1">
+> 		<template slot="title">菜单</template>
+> 		<fan-menu-item>子菜单1</fan-menu-item>
+> 		<fan-menu-item>子菜单2</fan-menu-item>
+> 	</fan-submenu>
+> </fan-menu>
+> ```
+
+#### menu Attributes
+#### menu item Attributes
+#### submenu Attributes
+----
+
+<div id="slider"></div>
+
+### slider (滑块)
+> 通过拖动滑块在一个固定区间内进行选择
+
+#### 示例
+> 基础用法
+> ```html
+> <fan-slider v-model="value" />
+> ```
+> 竖向模式
+> ```html
+> <fan-slider v-model="value" height="300px" />
+> ```
+
+#### Attributes
+|参数|说明|类型|可选值|默认值|
+|:-|:-|:-|:-|:-|
+|size|尺寸|String|extra-small / small / medium / large / extra-large|——|
+|min-size|最小尺寸|String|extra-small / small / medium / large / extra-large|——|
+|max-size|最大尺寸|String|extra-small / small / medium / large / extra-large|——|
+|value / v-model|绑定值|Number|——|——|
+|min|最小值|Number|——|0|
+|max|最大值|Number|——|100|
+|color|背景及文本颜色|String|——|#DCDFE6|
+|active-color|激活的背景及tooltip颜色|String|——|#333|
+|step-color|间断点颜色|String|——|#FFF|
+|disabled|是否禁用|Boolean|——|false|
+|step|步长|Number|——|1|
+|show-stops|是否显示间断点|Boolean|——|false|
+|show-tooltip(尚未实现)|是否显示tooltip|Boolean|——|true|
+|format-tooltip(尚未实现)|格式化tooltip message|Function(value)|——|——|
+|tooltip-class(尚未实现)|为tooltip添加类|String|——|——|
+|range(尚未实现)|是否为范围选择|Boolean|——|false|
+|height|slider高度，设置后变为竖向模式|String|——|——|
+|marks|标记， key 的类型必须为 number 且取值在闭区间 [min, max] 内|Object|——|——|
+#### Events
+|事件名称|说明|回调参数|
+|:-|:-|:-|
+|change|值改变时触发（使用鼠标拖曳时，只在松开鼠标后触发）|(value: Number)|
+|input|数据改变时触发（使用鼠标拖曳时，活动过程实时触发）|(value: Number)|
+----
+
+<div id="switch"></div>
+
+### switch (开关)
+> 表示两种相互对立的状态间的切换，多用于触发「开/关」。
+
+#### 示例
+> 基础用法
+> ```html
+> <fan-switch v-model="value" />
+> ```
+> 添加文字描述
+> ```html
+> <fan-switch v-model="value" active-text="开启" inactive-text="关闭" />
+> ```
+
+#### Attributes
+|参数|说明|类型|可选值|默认值|
+|:-|:-|:-|:-|:-|
+|size|尺寸|String|extra-small / small / medium / large / extra-large|——|
+|min-size|最小尺寸|String|extra-small / small / medium / large / extra-large|——|
+|max-size|最大尺寸|String|extra-small / small / medium / large / extra-large|——|
+|value / v-model|绑定值|Boolean / String / Number|——|——|
+|width|switch的宽度（像素）|Number|——|——|
+|active-icon|switch打开时所显示图标，设置此项会忽略active-text|String|——|——|
+|inactive-icon|switch关闭时所显示图标，设置此项会忽略active-text|String|——|——|
+|active-text|switch打开时的文字描述|String|——|——|
+|inactive-text|switch关闭时的文字描述|String|——|——|
+|active-value|switch打开时的值|Boolean / String / Number|——|true|
+|inactive-value|switch关闭时的值|Boolean / String / Number|——|false|
+|active-color|switch打开时的颜色|String|——|#333|
+|inactive-color|switch关闭时的颜色|String|——|#DCDFE6|
+|name|switch对应的name属性|String|——|——|
+|disabled|是否禁用|Boolean|——|false|
+#### Events
+|事件名称|说明|回调参数|
+|:-|:-|:-|
+|change|switch状态发生变化时的回调函数|(value: Boolean / String / Number)
+#### Methods
+|方法名|说明|参数|
+|:-|:-|:-|
+|focus|使switch获取焦点|——|
 ----

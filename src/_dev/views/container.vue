@@ -20,11 +20,12 @@
 		<h1>---</h1>
 		<fan-switch v-model="switchValue" inactive-text="小王" active-text="少妇" active-icon="fan-icon-accountplus" inactive-color="#999" inactive-icon="fan-icon-accountminus" />
 		<fan-switch @change="change" v-model="switchValue" inactive-text="男" active-text="女" disabled />
+		<el-switch @change="change" v-model="switchValue" inactive-text="男" active-text="女" disabled />
 		<p>{{sliderValue}}</p>
 		<h1>---</h1>
 		<fan-slider v-model="sliderValue" size="extra-large" :step="10" show-stops @change="change" @input="input" disabled :marks="marks" />
 		<fan-slider v-model="sliderValue" size="large" :step="8" show-stops />
-		<fan-slider v-model="sliderValue" size="midume" active-color="blue" inactive-color="#999" color="yellow" :marks="marks" />
+		<fan-slider v-model="sliderValue" size="midume" active-color="blue" color="#999" stepColor="yellow" :marks="marks" />
 		<fan-slider v-model="sliderValue" size="small" :step="5" show-stops :marks="marks" />
 		<fan-slider v-model="sliderValue" size="extra-small" :step="4" show-stops :marks="marks" />
 		<fan-slider v-model="sliderValue" size="extra-large" height="300px" :step="10" show-stops :marks="marks" />

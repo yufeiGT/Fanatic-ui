@@ -28,15 +28,15 @@ export default {
 		},
 		color: {
 			type: String,
-			default: '#FFF',
+			default: '#DCDFE6',
 		},
 		activeColor: {
 			type: String,
 			default: '#333',
 		},
-		inactiveColor: {
+		stepColor: {
 			type: String,
-			default: '#DCDFE6',
+			default: '#FFF',
 		},
 		disabled: Boolean,
 		step: {
@@ -119,7 +119,7 @@ export default {
 					'i', {
 						style: {
 							[_vm.vertical ? 'bottom' : 'left']: `${positon}%`,
-							color: _vm[i >= _vm.value ? 'inactiveColor' : 'activeColor'],
+							color: _vm[i >= _vm.value ? 'color' : 'activeColor'],
 						},
 					}, [_vm._v(_vm.marks[i])],
 				));
@@ -128,7 +128,7 @@ export default {
 						staticClass: 'fan-slider-toTop',
 						style: {
 							[_vm.vertical ? 'bottom' : 'left']: `${positon}%`,
-							backgroundColor: _vm.color,
+							backgroundColor: _vm.stepColor,
 						},
 					},
 				));
@@ -150,7 +150,7 @@ export default {
 					'i', {
 						style: {
 							[_vm.vertical ? 'bottom' : 'left']: `${_vm.getPercent(_vm.step * i)}%`,
-							backgroundColor: _vm.color,
+							backgroundColor: _vm.stepColor,
 						},
 					}));
 			}
@@ -175,7 +175,7 @@ export default {
 							'div', {
 								staticClass: 'fan-slider-line',
 								style: {
-									backgroundColor: _vm.inactiveColor,
+									backgroundColor: _vm.color,
 								},
 								on: {
 									click: e => {
@@ -203,7 +203,7 @@ export default {
 								staticClass: 'fan-slider-round',
 								style: {
 									[_vm.vertical ? 'bottom' : 'left']: `${_vm.percent}%`,
-									backgroundColor: _vm.color,
+									backgroundColor: _vm.stepColor,
 									borderColor: _vm.activeColor,
 								},
 								directives: _vm.disabled ? [] : [{

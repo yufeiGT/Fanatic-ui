@@ -8,7 +8,7 @@
 						<adapt-extra-small tag="p" style="float: right; line-height: 30px;" reverse>{{adaptType}}</adapt-extra-small>
 					</template>
 					<template slot="title">{{adaptType}}</template>
-					<fan-menu-item icon="fan-icon-behance-outline">
+					<fan-menu-item icon="fan-icon-accountoutline">
 						<router-link to="/">首页</router-link>
 					</fan-menu-item>
 					<fan-menu-item icon="fan-icon-behance-outline">

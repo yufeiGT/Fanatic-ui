@@ -4,8 +4,8 @@
 
 ## 安装
 
-``` 
-imprort Vue from 'vue';
+```javascript
+import Vue from 'vue';
 import FanaticUI from 'fanatic-ui';
 
 Vue.use(FanaticUI);

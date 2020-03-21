@@ -21,6 +21,7 @@ export default {
 	methods: {
 		getSlot(slot) {
 			if (!slot) return [];
+			console.log(slot, this.visible);
 			if (this.visible) return slot;
 			let newSlot = [];
 			slot.some(vnode => {

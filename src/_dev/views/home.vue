@@ -8,8 +8,13 @@
 		<br>
 		<fan-input v-if="adaptType == 'extra-small'" v-model="value" placeholder="请输入账号" clearable size="big" style=" margin-left: 30px;" />
 		<fan-input v-model="value" show-password placeholder="请输入密码" clearable :disabled="disabled" />
+		<fan-adapt type="extra-small">我是最小的</fan-adapt>
 		<fan-input v-model="value" placeholder="请输入账号" clearable size="small" :disabled="disabled" />
 		<fan-input v-model="value" placeholder="请输入账号" clearable size="mini" />
+		<fan-adapt type="extra-small" :reverse="true">我不在最小时显示</fan-adapt>
+		<adapt-extra-small>
+			<adapt-reverse>我不在最小时显示</adapt-reverse>
+		</adapt-extra-small>
 
 		<fan-button @click="disabled = !disabled" back-color="rgb(255, 68, 0)">禁用</fan-button>
 		<fan-button @click="consoleValue" size="mini" back-color="rgb(255, 174, 0)">获取值</fan-button>

@@ -4,8 +4,8 @@
 * [button](#button)
 * [image](#image)
 * [input](#input)
-
 ----
+
 <div id="adapt"></div>
 
 ### adapt (响应式组件)
@@ -22,17 +22,17 @@
 
 #### 示例
 > 在页面尺寸是extra-small时显示
-```HTML
-<fan-adapt type="extra-small">我是最小的</fan-adapt>
-<adapt-extra-small>我是最小的</adapt-extra-small>
-```
+> ```HTML
+> <fan-adapt type="extra-small">我是最小的</fan-adapt>
+> <adapt-extra-small>我是最小的</adapt-extra-small>
+> ```
 > 在页面尺寸不是extra-small是显示
-```HTML
-<fan-adapt type="extra-small" reverse>我不在最小时显示</fan-adapt>
-<adapt-extra-small>
-	<adapt-reverse>我不在最小时显示</adapt-reverse>
-</adapt-extra-small>
-```
+> ```HTML
+> <fan-adapt type="extra-small" reverse>我不在最小时显示</fan-adapt>
+> <adapt-extra-small>
+> 	<adapt-reverse>我不在最小时显示</adapt-reverse>
+> </adapt-extra-small>
+> ```
 
 #### adapt-reverse (颠倒组件)
 > 该组件放在只允许放在adapt组件的插槽中
@@ -51,12 +51,12 @@
 ### breadcrumb (面包屑)
 #### 示例
 > 基础用法
-```HTML
-<fan-breadcrumb separator=">">
-	<fan-breadcrumb-item to="/">首页</fan-breadcrumb-item>
-	<fan-breadcrumb-item><a href="http://www.baidu.com">子页</a></fan-breadcrumb-item>
-</fan-breadcrumb>
-```
+> ```HTML
+> <fan-breadcrumb separator=">">
+> 	<fan-breadcrumb-item to="/">首页</fan-breadcrumb-item>
+> 	<fan-breadcrumb-item><a href="http://www.baidu.com">子页</a></fan-breadcrumb-item>
+> </fan-breadcrumb>
+> ```
 
 #### breadcrumb Attributes
 |参数|说明|类型|可选值|默认值|
@@ -75,13 +75,13 @@
 ### button (按钮)
 #### 示例
 > 自适应大小
-```HTML
-<fan-button>自适应按钮</fan-button>
-```
-固定大小
-```HTML
-<fan-button size="extra-small">迷你按钮</fan-button>
-```
+> ```HTML
+> <fan-button>自适应按钮</fan-button>
+> ```
+> 固定大小
+> ```HTML
+> <fan-button size="extra-small">迷你按钮</fan-button>
+> ```
 
 #### Attributes
 |参数|说明|类型|可选值|默认值|
@@ -108,9 +108,9 @@
 ### image (图片)
 #### 示例
 > 基础用法
-```HTML
-<fan-image src="https://crazy-gt.com/crazy-js/images/logo.png" />
-```
+> ```HTML
+> <fan-image src="https://crazy-gt.com/crazy-js/images/logo.png" />
+> ```
 
 #### Attributes
 |参数|说明|类型|可选值|默认值|
@@ -139,13 +139,13 @@
 ### input (输入框)
 #### 示例
 > 基础用法
-```HTML
-<fan-input v-model="text" />
-```
-使用show-password属性即可得到一个可切换显示隐藏的密码框
-```HTML
-<fan-input v-model="text" show-password />
-```
+> ```HTML
+> <fan-input v-model="text" />
+> ```
+> 使用show-password属性即可得到一个可切换显示隐藏的密码框
+> ```HTML
+> <fan-input v-model="text" show-password />
+> ```
 
 #### Attributes
 |参数|说明|类型|可选值|默认值|

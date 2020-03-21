@@ -11,7 +11,7 @@
 				<span>加载失败</span>
 			</div>
 		</slot>
-		<img v-else v-bind="$attrs" :src="src" :style="{
+		<img v-else v-bind="$attrs" :src="src" :alt="alt" :style="{
 			objectFit: fit,
 		}">
 	</div>
@@ -22,6 +22,8 @@ export default {
 	props: {
 		src: String,
 		fit: String,
+		alt: String,
+		referrerPolicy: String,
 		lazy: Boolean,
 		width: String,
 		height: String,

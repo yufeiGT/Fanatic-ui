@@ -30,9 +30,6 @@ export default {
 	},
 	props: {
 		value: [String, Number],
-		size: String,
-		minSize: String,
-		maxSize: String,
 		type: {
 			type: String,
 			default: 'text',

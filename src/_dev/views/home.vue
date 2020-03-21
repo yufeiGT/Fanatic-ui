@@ -6,6 +6,11 @@
 		</fan-breadcrumb>
 		<br>
 		<br>
+		<fan-image src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1381775258,2157620825&fm=26&gp=0.jpg">
+			<slot name="loadding">
+				asdad
+			</slot>
+		</fan-image>
 		<fan-input v-if="adaptType == 'extra-small'" v-model="value" placeholder="请输入账号" clearable size="big" style=" margin-left: 30px;" />
 		<fan-input v-model="value" show-password placeholder="请输入密码" clearable :disabled="disabled" />
 		<fan-adapt type="extra-small">我是最小的</fan-adapt>

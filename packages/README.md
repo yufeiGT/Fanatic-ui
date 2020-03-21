@@ -7,16 +7,17 @@
 
 ----
 <div id="adapt"></div>
+
 ### adapt (响应式组件)
 > 通过adapt组件创建在页面不同尺寸下插槽内容的显示与隐藏
 
 #### 扩展组件
 > 针对不同尺寸扩展的组件，无需传入type参数
-##### adapt-extra-small
-##### adapt-small
-##### adapt-medium
-##### adapt-large
-##### adapt-extra-large
+> ##### adapt-extra-small
+> ##### adapt-small
+> ##### adapt-medium
+> ##### adapt-large
+> ##### adapt-extra-large
 
 
 #### 示例
@@ -25,7 +26,7 @@
 <fan-adapt type="extra-small">我是最小的</fan-adapt>
 <adapt-extra-small>我是最小的</adapt-extra-small>
 ```
-在页面尺寸不是extra-small是显示
+> 在页面尺寸不是extra-small是显示
 ```HTML
 <fan-adapt type="extra-small" reverse>我不在最小时显示</fan-adapt>
 <adapt-extra-small>
@@ -46,6 +47,7 @@
 ----
 
 <div id="breadcrumb"></div>
+
 ### breadcrumb (面包屑)
 #### 示例
 > 基础用法
@@ -69,6 +71,7 @@
 ----
 
 <div id="button"></div>
+
 ### button (按钮)
 #### 示例
 > 自适应大小
@@ -101,6 +104,7 @@
 ----
 
 <div id="image"></div>
+
 ### image (图片)
 #### 示例
 > 基础用法
@@ -131,6 +135,7 @@
 ----
 
 <div id="input"></div>
+
 ### input (输入框)
 #### 示例
 > 基础用法

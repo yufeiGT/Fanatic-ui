@@ -1,7 +1,7 @@
 {
 	"name": "fanatic-ui",
 	"description": "基于 Vue 的响应式 UI 库",
-	"version": "0.0.4",
+	"version": "0.0.19",
 	"author": "~crazy <769416198@qq.com>",
 	"license": "UnLicense",
 	"private": false,

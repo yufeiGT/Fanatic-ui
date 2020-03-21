@@ -33,8 +33,13 @@
 		<fan-slider v-model="sliderValue" size="small" height="300px" />
 		<fan-slider v-model="sliderValue" size="extra-small" height="300px" />
 		<h1>---</h1>
-		<el-slider v-model="sliderValue" :step="8" :marks="marks" show-input></el-slider>
-		<el-slider v-model="sliderValue" :marks="marks" show-input vertical height="300px"></el-slider>
+		<fan-image style="background-color: #333;" width="100px" height="100px" fit="cover" src="aasd">
+			<template slot="loading">
+				EEE
+			</template>
+		</fan-image>
+		<h1>---</h1>
+		<el-image fit="contain" style="width: 100px; height: 100px; background-color: #333;" :src="require('@/_dev/assets/logo.png')"></el-image>
 	</div>
 </template>
 <script>

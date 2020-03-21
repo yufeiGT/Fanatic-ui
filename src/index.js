@@ -14,20 +14,28 @@ import appVersion from './utils/appVersion';
 import '../lib/iconfont/iconfont.css';
 import '../lib/style/index.scss';
 
-const install = (Vue, opts = {}) => {
+const install = (Vue, opts = {
+	context: {
+		req: {
+			header: {},
+		},
+	},
+}) => {
 	[...components, adaptReverse, ...adaptTypes].forEach(component => Vue.component(component.name, component));
 	directives.forEach(directive => Vue.directive(directive.name, directive));
 	mixins.forEach(mixin => Vue.mixin(mixin));
 	Vue.prototype.Fanatic = Fanatic;
-	Vue.prototype.appVersion = appVersion(window.navigator);
+	const navigator = typeof window === 'undefined' ? (navigator => {
+		return {
+			userAgent: navigator['user-agent'],
+			language: navigator['accept-language'],
+		};
+	})(opts.context.req.headers) : window.navigator;
+	Vue.prototype.appVersion = appVersion(navigator);
 	if (opts.zIndex) Fanatic.zIndex = opts.zIndex;
 	if (opts.size) Fanatic.size = opts.size;
 	if (opts.minSize) Fanatic.minSize = opts.minSize;
 	if (opts.maxSize) Fanatic.maxSize = opts.maxSize;
-	const viewport = document.createElement('meta');
-	viewport.setAttribute('name', 'viewport');
-	viewport.setAttribute('content', 'width=device-width, user-scalable=no, initial-scale=1');
-	document.querySelector('head').appendChild(viewport);
 };
 const Fanatic = {
 	version,
@@ -43,6 +51,6 @@ const Fanatic = {
 	maxSize: '',
 };
 
-if (window !== undefined && window.Vue) install(window.Vue);
+if (typeof window !== 'undefined' && window.Vue) install(window.Vue);
 
 export default Fanatic;

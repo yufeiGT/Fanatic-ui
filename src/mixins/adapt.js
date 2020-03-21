@@ -71,7 +71,7 @@ export default {
 			return !maxSize || index < AdaptType.indexOf(maxSize) ? size : maxSize;
 		},
 	},
-	created() {
+	beforeMount() {
 		Init(name => {
 			CurrentMatch = name;
 			this.adaptType = name;

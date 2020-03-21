@@ -14,6 +14,8 @@ import footer from './footer';
 export const Footer = footer;
 import header from './header';
 export const Header = header;
+import image from './image';
+export const Image = image;
 import input from './input';
 export const Input = input;
 import main from './main';
@@ -38,6 +40,7 @@ export default [
 	Container,
 	Footer,
 	Header,
+	Image,
 	Input,
 	Main,
 	menu,
